@@ -1,0 +1,21 @@
+# Playbook that checks permissions on files
+
+- hosts: localhost
+  gather_facts: false
+  vars:
+  tasks:
+    - name: parse /tmp directory
+      find:
+        paths: /tmp
+        patterns: '*.sh'
+      register: list_of_files
+
+    - debug:
+        var: item.path
+      with_items: "{{ list_of_files.files }}"
+
+    - name: change permissions
+      file:
+        path: "{{ item.path }}"
+        mode: a+x
+      with_items: "{{ list_of_files.files }}"
