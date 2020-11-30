@@ -8,7 +8,7 @@ for role in user['roles']:
 
 
 user['location']['city'] = 'Dallas'
-with open('profile.yml', 'w') as file:
+with open('profile_new.yml', 'w') as file:
     yaml.dump(data, file, default_flow_style=False)
 
 
