@@ -1,9 +1,9 @@
 ---
 user:
-  name: john
+  name: Mansa
   location:
-    city: Austin
-    state: TX
+    city: Atlanta
+    state: GA
   roles:
     - admin
     - user
