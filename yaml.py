@@ -1,6 +1,5 @@
 import yaml
 with open('profile.yml', 'r') as file:
-    '''The line below converts YAML file into a Python dictionary'''
     data = yaml.safe_load(file)
 user = data['user']
 print(user['name'])
@@ -9,4 +8,9 @@ for role in user['roles']:
 
 
 user['location']['city'] = 'Dallas'
-with open('profile.yml', )
+with open('profile.yml', 'w') as file:
+    yaml.dump(data, file, default_flow_style=False)
+
+
+def safe_load(file):
+    return None
